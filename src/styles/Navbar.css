@@ -1,0 +1,132 @@
+/* 🔹 네비게이션 바 스타일 */
+.navbar {
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* 🔹 네비게이션 내부 컨테이너 */
+.navbar-container {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 🔹 네비게이션 메뉴 */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    position: relative;
+}
+
+/* 🔹 네비게이션 항목 */
+.nav-item {
+    position: relative;
+}
+
+/* 🔹 네비게이션 버튼 */
+.nav-link {
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-item.active .nav-link {
+    color: #003378;
+  }
+
+
+
+
+/* 🔹 드롭다운 메뉴 스타일 */
+.dropdown-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    top: 40px;
+    background: white;
+    list-style: none;
+    padding: 10px 0;
+    width: 180px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🔹 드롭다운 메뉴 위치 조정 */
+.admission {
+    width: 200px;
+}
+
+.alumni {
+    width: 220px;
+}
+
+/* 🔹 드롭다운 항목 */
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* 🔹 드롭다운 항목 호버 효과 */
+.dropdown-menu li:hover {
+    background: #f0f0f0;
+}
+
+/* 🔹 로그인 & 회원가입 */
+.auth-links {
+    font-size: 14px;
+    color: black;
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* 수직 정렬 */
+    text-decoration: none; /* 기본 스타일 제거 */
+    color: black; /* 글자 색상 */
+  }
+  
+  .logo img {
+    width: 50px;  /* 로고 크기 */
+    height: auto;
+   
+  }
+  
+  .logo-text {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    line-height: 1.2; /* 줄 간격 */
+  }
+  
+  .logo-text span:first-child {
+    font-weight: bold; /* "연세대학교" 굵게 */
+    font-size: 16px;
+  }
+  
+  .logo-text span:last-child {
+    font-size: 14px; /* "의료산업 최고위자 과정" 크기 */
+    color: #555; /* 연한 회색 */
+  }

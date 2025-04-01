@@ -1,0 +1,452 @@
+/* ServingPage.css */
+.serving-container {
+    width: 100%;
+    max-width: 1920px;  /* 최대 가로 크기 1920px */
+    height: 2576px; /* ✅ 전체 높이 1556px */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ✅ 전체 높이를 화면 높이로 유지 */
+  }
+  
+  
+  /* 🔹 서빙 헤더 컨테이너 */
+  .serving-header {
+    position: relative; /* ✅ 오버레이 적용을 위해 상대 위치 설정 */
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  .footer {
+    width: 100%;
+    height: 264px; /* ✅ 기존 높이 유지 */
+    background-color: #222;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* ✅ 절대 위치가 아니라 일반 배치 */
+  }
+  
+  /* 🔹 배경 이미지 */
+  .headerimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ✅ 이미지를 꽉 채우면서 비율 유지 */
+    display: block;
+  }
+  
+  /* 🔹 오버레이 (검은색 30%) */
+  .serving-header::after {
+    content: ""; /* ✅ 가상 요소 활성화 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* ✅ 검은색 30% 투명도 */
+    z-index: 1; /* ✅ 텍스트보다 뒤에 배치 */
+  }
+  
+  /* 🔹 헤더 텍스트 */
+  .serving-header-text {
+    position: absolute;
+    color: white; /* ✅ 텍스트 색상 */
+    z-index: 2; /* ✅ 텍스트가 오버레이 위에 표시되도록 */
+    top: 115px;
+    left: 360px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .serving-header-detail {
+    position: absolute;
+    color: white; /* ✅ 텍스트 색상 */
+    z-index: 2; /* ✅ 텍스트가 오버레이 위에 표시되도록 */
+    top: 169px;
+    left: 360px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1920px;
+    height: 60px;
+    background-color: #fff;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    padding-left: 30px;
+    position: relative;
+  }
+  
+  .breadcrumb-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 🔹 요소 간 간격 */
+  }
+  
+  .breadcrumb-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #003378;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .home-icon {
+    font-size: 18px;
+  }
+  
+  .breadcrumb-current {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .breadcrumb-icon {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* ✅ 푸터와 겹치지 않도록 설정 */
+  .serving-content {
+    flex-grow: 1;
+    padding-bottom: 100px;
+    display: flex; /* ✅ 세로 정렬을 위해 추가 */
+    flex-direction: column; /* ✅ 자식 요소를 세로 배치 */
+    align-items: flex-start; /* ✅ 왼쪽 정렬 */
+    justify-content: flex-start; /* ✅ 위쪽 정렬 */
+    position: relative;
+  }
+  
+  /* ✅ 타이틀 위치 조정 */
+  .serving-content-title {
+    position: relative;
+    left: 360px;
+    top: 120px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  /* 🔹 파란색 텍스트 스타일 */
+  .blue-text {
+    color: #003378;
+  }
+  
+  .Entrance-text {
+    position: relative;
+    top : 160px;
+    left: 360px;
+    font-size: 16px;
+    color: #131313;
+  }
+
+  .entrance-title2 {
+    position: absolute;
+    left: 360px;
+    top: 312px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #003378;
+  }
+
+  .posterimage {
+    position: absolute;
+    width: 340px;
+    height: 480px;
+    top: 352px;
+    left: 360px;
+  }
+
+  .title {
+    width: 90px;
+    height: 34px;
+    background-color: #003378;
+    color: #FFFFFF;
+    font-size: 14px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    position: absolute;
+    top: 352px;
+    left: 760px;
+    border-radius: 5px;
+  }
+
+.detail {
+  position: absolute;
+  top : 356px;
+  left: 862px;
+  font-size: 16px;
+  width: 360px;
+  height: 16px;
+  white-space: nowrap;
+  color: #131313;
+}
+
+.title2 {
+  width: 90px;
+  height: 34px;
+  background-color: #003378;
+  color: #FFFFFF;
+  font-size: 14px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 402px;
+  left: 760px;
+  border-radius: 5px;
+}
+
+.detail2 {
+  position: absolute;
+  top : 406px;
+  left: 862px;
+  font-size: 16px;
+  width: 360px;
+  height: 16px;
+  white-space: nowrap;
+  color: #131313;
+}
+
+.title3 {
+  width: 90px;
+  height: 34px;
+  background-color: #003378;
+  color: #FFFFFF;
+  font-size: 14px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 452px;
+  left: 760px;
+  border-radius: 5px;
+}
+
+.detail3 {
+  position: absolute;
+  top : 456px;
+  left: 862px;
+  font-size: 16px;
+  width: 360px;
+  height: 16px;
+  white-space: nowrap;
+  color: #131313;
+}
+
+.title4 {
+  width: 90px;
+  height: 34px;
+  background-color: #003378;
+  color: #FFFFFF;
+  font-size: 14px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 502px;
+  left: 760px;
+  border-radius: 5px;
+}
+
+.detail4 {
+  position: absolute;
+  top : 506px;
+  left: 862px;
+  font-size: 16px;
+  width: 360px;
+  height: 16px;
+  white-space: nowrap;
+  color: #131313;
+}
+
+.title5 {
+  width: 90px;
+  height: 34px;
+  background-color: #003378;
+  color: #FFFFFF;
+  font-size: 14px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 552px;
+  left: 760px;
+  border-radius: 5px;
+}
+
+.detail5 {
+  position: absolute;
+  top : 547px;
+  left: 862px;
+  font-size: 16px;
+  width: 360px;
+  height: 16px;
+  white-space: nowrap;
+  color: #131313;
+}
+
+.title6 {
+  width: 90px;
+  height: 34px;
+  background-color: #003378;
+  color: #FFFFFF;
+  font-size: 14px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 631px;
+  left: 760px;
+  border-radius: 5px;
+}
+
+.detail6 {
+  position: absolute;
+  top : 635px;
+  left: 862px;
+  font-size: 16px;
+  width: 360px;
+  height: 16px;
+  white-space: nowrap;
+  color: #131313;
+}
+
+.title7 {
+  width: 90px;
+  height: 34px;
+  background-color: #003378;
+  color: #FFFFFF;
+  font-size: 14px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 681px;
+  left: 760px;
+  border-radius: 5px;
+}
+
+.detail7 {
+  position: absolute;
+  top : 685px;
+  left: 862px;
+  font-size: 16px;
+  width: 360px;
+  height: 16px;
+  white-space: nowrap;
+  color: #131313;
+}
+
+.title8 {
+  width: 90px;
+  height: 34px;
+  background-color: #003378;
+  color: #FFFFFF;
+  font-size: 14px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 731px;
+  left: 760px;
+  border-radius: 5px;
+}
+
+.detail8 {
+  position: absolute;
+  top : 726px;
+  left: 862px;
+  font-size: 16px;
+  width: 360px;
+  height: 16px;
+  white-space: nowrap;
+  color: #131313;
+}
+
+
+/* 🔹 테이블 컨테이너 */
+.table-container {
+  width: 100%;
+  width: 1200px; /* ✅ 테이블 최대 너비 설정 */
+  height: 654px;
+  margin: 40px auto; /* ✅ 중앙 정렬 */
+  position: absolute;
+  top: 872px;
+  left: 360px;
+}
+
+/* 🔹 테이블 기본 스타일 */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse; /* ✅ 테두리 겹침 제거 */
+  font-size: 16px;
+  text-align: left;
+}
+
+/* 🔹 테이블 헤더 스타일 */
+.schedule-table thead {
+  background-color: #003378; /* ✅ 헤더 배경색 */
+  color: white;
+}
+
+/* 🔹 헤더 텍스트 정렬 */
+.schedule-table th {
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* 🔹 테이블 바디 스타일 */
+.schedule-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 🔹 짝수 행 스타일 */
+.schedule-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* 🔹 첫 번째 열 (주차) 스타일 */
+.schedule-table td:first-child {
+  text-align: center;
+  font-weight: bold;
+}
+
+.title9 {
+  position: absolute;
+  font-size: 16px;
+  color: #666666;
+  top: 1712px;
+  left: 360px;
+}
+
+.title10 {
+  position: absolute;
+  font-size: 16px;
+  color: #666666;
+  top: 1740px;
+  left: 360px;
+}

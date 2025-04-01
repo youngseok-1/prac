@@ -1,0 +1,489 @@
+/* 🔹 Google Fonts 추가 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+
+/* 🔹 푸터를 항상 화면 하단에 고정 */
+.footer {
+  width: 100%;
+  height: 264px;
+  background-color: #222; /* 어두운 배경 */
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  position: absolute; /* ✅ 고정 위치 */
+  bottom: 0;
+  left: 0;
+}
+
+/* 🔹 푸터 내부 컨테이너 */
+.footer-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 전체 레이아웃 */
+
+/* 네비게이션 바 */
+.navbar {
+  width: 100%;
+  height: 70px; /* 네비게이션 높이 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* 메인 콘텐츠 영역 */
+.main-content {
+  flex-grow: 1; /* 남은 공간을 채우도록 설정 */
+  padding-top: 30px; /* 네비게이션 바 높이 만큼 여백 추가 */
+  min-height: 3500px; /* 최소 높이 설정하여 푸터와 겹치지 않게 */
+}
+
+/* 🔹 슬라이드 컨테이너 */
+.image-slider {
+  width: 100%;
+  max-width: 1920px;
+  height: 992px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 🔹 슬라이드 개별 요소 */
+.slide {
+  position: relative;
+  width: 100%;
+  height: 992px;
+}
+
+/* 🔹 슬라이드 이미지 */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 🔹 슬라이드 내부 텍스트 */
+.slide-text {
+  position: absolute;
+  bottom: 20%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* 🔹 점 네비게이션 컨테이너 */
+.custom-dots {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 🔹 개별 점 스타일 */
+.custom-dots li {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 6px;
+  background: gray;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 활성화된 점 */
+.custom-dots li.slick-active {
+  width: 35px;
+  height: 8px;
+  border-radius: 5px;
+  background: white;
+}
+
+/* 🔹 점을 버튼으로 설정 */
+.custom-dots li button {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* 🔹 중앙 정렬 컨테이너 */
+.info-content {
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  align-items: center; /* 중앙 정렬 */
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 1920px; /* 가로 최대 길이 설정 */
+  height: 600px; /* 높이 조정 */
+  margin: 200px auto 100px; /* 위, 아래 여백 추가 */
+  gap: 40px; /* 🔥 컨테이너들끼리 간격 추가 */
+
+}
+
+/* 🔹 info-notice 스타일 */
+.info-notice {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px; /* ✅ 개별 요소 간 간격 추가 */
+}
+
+/* 🔹 info-detail 스타일 */
+.info-detail {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #666;
+  max-width: 900px;
+  margin-bottom: 30px; /* ✅ 아래쪽 여백 추가 */
+}
+
+/* 🔹 버튼 스타일 */
+.info-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #004a99;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.info-btn:hover {
+  background-color: #003366;
+}
+
+
+.btn-content {
+  width: 1920px;
+  height: 720px;
+  position: relative; /* ✅ 오버레이를 배경 위에 배치하기 위해 필요 */
+}
+
+.btn-content::before {
+  content: ""; /* ✅ 가상 요소를 활성화 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 45, 96, 0.85); /* ✅ #082D60 색상을 85% 투명도로 설정 */
+}
+
+.btn-info{
+  position: absolute;
+  top: 186px;
+  left: 360px;
+  font-size: 30px;
+  line-height: 41.6px;
+  color: #FFFFFF;
+  font-weight: bold; 
+  
+}
+
+.custom-line {
+  width: 472px; /* 원하는 가로 길이 */
+  background-color: #FFFFFF; /* 선 색상 */
+  border: 1px;
+  height: 2px; /* 선의 두께 */
+  margin: 20px auto
+}
+
+
+.btn-info2{
+  position: absolute;
+  top: 350px;
+  left : 360px;
+  font-size: 16px;
+  color: #FFFFFF;
+}
+
+
+.btn-container {
+  position: absolute; /* ✅ 부모 기준으로 위치 조정 */
+  top: 186px;
+  left: 1092px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2열로 배치 */
+  gap: 20px; /* 버튼 사이 여백 */
+  width: fit-content; /* 내용에 맞게 크기 조절 */
+  z-index: 2;
+}
+
+.btn {
+  width: 220px;
+  height: 160px;
+  background-color: rgba(255, 255, 255, 0.4); /* 흰색 + 40% 투명도 */
+  border: 10px; /* 테두리 제거 */
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  z-index: 2;
+  position: relative; /* ✅ 부모 요소로 설정 */
+  display: flex;
+  flex-direction: column; /* 버튼 내 요소 세로 정렬 */
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-text {
+  position: absolute;
+  top: 20px; /* 원하는 위치로 조정 */
+  left: 20px; /* 원하는 위치로 조정 */
+}
+
+.btn-text2 {
+  position: absolute;
+  top: 46px; /* 원하는 위치로 조정 */
+  left: 20px; /* 원하는 위치로 조정 */
+  font-weight: bold;
+  font-size: 24px;
+}
+
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.6); /* 호버 시 60% 투명도로 변경 */
+}
+
+/* ✅ 원(circle) 스타일 */
+.btn-circle {
+  width: 28px;
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.4); /* ✅ 흰색 배경 */
+  border-radius: 50%; /* ✅ 원 모양 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 15px; /* 버튼 내부 하단 정렬 */
+  right: 15px; /* 버튼 내부 오른쪽 정렬 */
+}
+
+/* ✅ 화살표 스타일 */
+.btn-circle i {
+  font-size: 15px;
+  color: #FFFFFF; /* ✅ 원하는 색상 */
+}
+
+.btn:hover {
+  background-color: white; /* 배경 흰색 */
+  color: #003378; /* 글자색 변경 */
+}
+
+/* 🔹 호버 시 버튼 내부 원과 화살표 색상 변경 */
+.btn:hover .btn-circle {
+  background-color: #003378; /* 화살표 원 색상 변경 */
+}
+.post-content{
+  width: 1920px;
+  height: 500px;
+  position: relative;
+}
+
+.post-text {
+  position: absolute;
+  top: 160px;
+  left: 360px;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.view-more {
+  position: absolute;
+  top : 166px;
+  left: 1429px;
+  font-weight: 600px;
+  font-size: 18px;
+  color: #003378;
+  cursor: pointer;
+
+  border-bottom: 1px solid #003378; /* 색상은 텍스트 색상과 동일하게 설정 */
+  padding-bottom: 5px;
+}
+
+.post-container {
+  position: absolute;
+  top: 304px;
+  left: 361px;
+  display: flex; /* ✅ 가로 정렬 */
+  gap: 120px; /* ✅ 포스트 사이 간격 */
+}
+
+.post-box {
+  width: 320px; /* ✅ 박스 크기를 이미지 크기에 맞춤 */
+  
+  flex-direction: column; /* ✅ 세로 정렬 */
+  position: relative; /* ✅ 내부 요소(오버레이, 화살표) 위치 조정 */
+  display: inline-block;
+  
+  
+}
+
+.post-box img {
+  width: 320px;  /* ✅ 가로 크기 */
+  height: 200px; /* ✅ 세로 크기 */
+  border-radius: 5px; /* ✅ 모서리 둥글게 */
+  object-fit: cover; /* ✅ 이미지 비율 유지 + 넘치는 부분 자르기 */
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 호버 시 검은색 반투명 효과 */
+.post-box img:hover {
+  filter: brightness(50%); /* ✅ 밝기 50%로 줄여 검게 보이도록 설정 */
+}
+
+/* 🔹 화살표 아이콘 */
+.post-box .hover-arrow {
+  position: absolute;
+  width: 18.69px;
+  height: 10.52px;
+  top: 15.67px;
+  left: 283.59px;
+  transform: rotate(-45deg); /* ✅ 각도 설정 */
+  opacity: 0; /* 초기에는 숨김 */
+  transition: opacity 0.3s ease-in-out;
+  color: #FFFFFF;
+}
+
+/* 🔹 호버 시 화살표 표시 */
+.post-box:hover .hover-arrow {
+  opacity: 1;
+}
+
+.post-underline {
+  width: 40px;
+  height: 3px;
+  background-color: #003378; /* 파란색 */
+  margin-top: 24px; /* ✅ 이미지와 간격 */
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px; /* ✅ 이미지와 간격 */
+}
+
+.post-detail {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 8px; /* ✅ 타이틀과 간격 */
+  color: #999999;
+}
+
+.post-date {
+  font-size: 14px;
+  color: gray;
+  margin-top: 6px; /* ✅ 디테일과 간격 */
+  margin-left: 220px;
+}
+
+
+.inquiry-content {
+  width: 1920px;
+  height: 480px;
+  position: relative;
+  margin-top: 200px; /* ✅ 위쪽 여백 추가 */
+  display: flex;
+  justify-content: center;
+  
+  
+}
+
+.inquiry-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 🔹 오버레이 효과 */
+.inquiry-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* ✅ 검은색 50% 투명도 */
+}
+
+
+/* 🔹 문의 컨테이너 */
+.inquiry-container {
+  position: absolute; /* ✅ 이미지 위에 배치 */
+  color: white; /* ✅ 텍스트 색상 흰색 */
+  z-index: 2; /* ✅ 오버레이 위로 올리기 */
+  top: 158px;
+  left: 360px;
+}
+
+/* 🔹 문의하기 제목 */
+.inquiry-title {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* 🔹 문의하기 설명 */
+.inquriy-detail {
+  font-size: 18px;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+/* 🔹 문의 버튼 */
+.inquiry-btn {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+
+
+
+.app-container {
+    width: 100%;
+    max-width: 1920px;
+    height: 4060px;
+    margin: 0 auto;
+    position: relative;
+  }
+  

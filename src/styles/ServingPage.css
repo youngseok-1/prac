@@ -1,0 +1,183 @@
+/* ServingPage.css */
+.serving-container {
+  width: 100%;
+  max-width: 1920px;  /* 최대 가로 크기 1920px */
+  height: 1556px; /* ✅ 전체 높이 1556px */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ✅ 전체 높이를 화면 높이로 유지 */
+}
+
+
+/* 🔹 서빙 헤더 컨테이너 */
+.serving-header {
+  position: relative; /* ✅ 오버레이 적용을 위해 상대 위치 설정 */
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.footer {
+  width: 100%;
+  height: 264px; /* ✅ 기존 높이 유지 */
+  background-color: #222;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* ✅ 절대 위치가 아니라 일반 배치 */
+}
+
+/* 🔹 배경 이미지 */
+.headerimage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ✅ 이미지를 꽉 채우면서 비율 유지 */
+  display: block;
+}
+
+/* 🔹 오버레이 (검은색 30%) */
+.serving-header::after {
+  content: ""; /* ✅ 가상 요소 활성화 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* ✅ 검은색 30% 투명도 */
+  z-index: 1; /* ✅ 텍스트보다 뒤에 배치 */
+}
+
+/* 🔹 헤더 텍스트 */
+.serving-header-text {
+  position: absolute;
+  color: white; /* ✅ 텍스트 색상 */
+  z-index: 2; /* ✅ 텍스트가 오버레이 위에 표시되도록 */
+  top: 115px;
+  left: 360px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.serving-header-detail {
+  position: absolute;
+  color: white; /* ✅ 텍스트 색상 */
+  z-index: 2; /* ✅ 텍스트가 오버레이 위에 표시되도록 */
+  top: 169px;
+  left: 360px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.breadcrumb {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  border: solid 1px;
+  border-color: gray;
+}
+
+.breadcrumb-container {
+  display: flex; /* ✅ 가로 정렬 */
+  align-items: center; /* ✅ 세로 중앙 정렬 */
+  position: relative;
+  gap: 20px; /* ✅ 아이템 간격 20px */
+  left: 360px;
+  width: 260px;
+  height: 60px;
+  
+  border: solid 1px;
+  border-color: gray; /* ✅ 테두리 색상 */
+}
+/* 🔹 홈 버튼 */
+.breadcrumb-home {
+ width: 60px;
+ height: 60px;
+ background-color: #003378;
+ left: 360px;
+ align-items: center;
+ justify-content: center;
+ display: flex; /* ✅ 중앙 정렬을 위해 flex 사용 */
+}
+
+.home-icon {
+  width: 18.75px;
+  height: 16.25px;
+  color: #FFFFFF;
+}
+
+/* 🔹 현재 페이지 */
+.breadcrumb-current {
+  color: #666666;
+  font-size: 16px;
+ 
+}
+
+
+/* ✅ 푸터와 겹치지 않도록 설정 */
+.serving-content {
+  flex-grow: 1;
+  padding-bottom: 100px;
+  display: flex; /* ✅ 세로 정렬을 위해 추가 */
+  flex-direction: column; /* ✅ 자식 요소를 세로 배치 */
+  align-items: flex-start; /* ✅ 왼쪽 정렬 */
+  justify-content: flex-start; /* ✅ 위쪽 정렬 */
+}
+
+/* ✅ 타이틀 위치 조정 */
+.serving-content-title {
+  position: relative;
+  left: 360px;
+  top: 120px;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+/* 🔹 파란색 텍스트 스타일 */
+.blue-text {
+  color: #003378;
+}
+
+/* ✅ width, height 정상 적용되도록 수정 */
+.serving-content-detail {
+  position: relative;
+  left: 360px;
+  top: 150px; /* ✅ 기존보다 조금 위로 */
+  width: 600px;
+  min-height: 360px; /* ✅ height 대신 min-height 사용 */
+  box-sizing: border-box; /* ✅ padding 포함한 width 계산 */
+}
+
+
+/* ✅ width, height 정상 적용되도록 수정 */
+.serving-content-all {
+  position: relative;
+  left: 360px;
+  top: 150px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.signpng {
+  position: absolute;
+  width: 86px;
+  height: 52px;
+  top: 1010px;
+  left: 650px
+}
+
+.servejpg {
+  position: absolute;
+  width: 420px;
+  height: 500px;
+  left: 1140px;
+  top: 480px;
+  border-radius: 10px;
+
+}

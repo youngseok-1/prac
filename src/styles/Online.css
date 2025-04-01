@@ -1,0 +1,311 @@
+/* ServingPage.css */
+.serving-container {
+    width: 100%;
+    max-width: 1920px;  /* 최대 가로 크기 1920px */
+    height: 2629px; /* ✅ 전체 높이 1556px */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* ✅ 전체 높이를 화면 높이로 유지 */
+  }
+  
+  
+  /* 🔹 서빙 헤더 컨테이너 */
+  .serving-header {
+    position: relative; /* ✅ 오버레이 적용을 위해 상대 위치 설정 */
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  .footer {
+    width: 100%;
+    height: 264px; /* ✅ 기존 높이 유지 */
+    background-color: #222;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* ✅ 절대 위치가 아니라 일반 배치 */
+  }
+  
+  /* 🔹 배경 이미지 */
+  .headerimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ✅ 이미지를 꽉 채우면서 비율 유지 */
+    display: block;
+  }
+  
+  /* 🔹 오버레이 (검은색 30%) */
+  .serving-header::after {
+    content: ""; /* ✅ 가상 요소 활성화 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* ✅ 검은색 30% 투명도 */
+    z-index: 1; /* ✅ 텍스트보다 뒤에 배치 */
+  }
+  
+  /* 🔹 헤더 텍스트 */
+  .serving-header-text {
+    position: absolute;
+    color: white; /* ✅ 텍스트 색상 */
+    z-index: 2; /* ✅ 텍스트가 오버레이 위에 표시되도록 */
+    top: 115px;
+    left: 360px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .serving-header-detail {
+    position: absolute;
+    color: white; /* ✅ 텍스트 색상 */
+    z-index: 2; /* ✅ 텍스트가 오버레이 위에 표시되도록 */
+    top: 169px;
+    left: 360px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1920px;
+    height: 60px;
+    background-color: #fff;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    padding-left: 30px;
+    position: relative;
+  }
+  
+  .breadcrumb-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* 🔹 요소 간 간격 */
+  }
+  
+  .breadcrumb-home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #003378;
+    color: white;
+    border-radius: 50%;
+  }
+  
+  .home-icon {
+    font-size: 18px;
+  }
+  
+  .breadcrumb-current {
+    font-size: 16px;
+    font-weight: bold;
+    color: #222;
+  }
+  
+  .breadcrumb-icon {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* ✅ 푸터와 겹치지 않도록 설정 */
+  .serving-content {
+    flex-grow: 1;
+    padding-bottom: 100px;
+    display: flex; /* ✅ 세로 정렬을 위해 추가 */
+    flex-direction: column; /* ✅ 자식 요소를 세로 배치 */
+    align-items: flex-start; /* ✅ 왼쪽 정렬 */
+    justify-content: flex-start; /* ✅ 위쪽 정렬 */
+    position: relative;
+  }
+  
+  .p1 {
+    position: relative;
+    top: 120px;
+    left: 384px;
+    font-size: 20px;
+    color: #003378;
+  }
+
+  .university-icon {
+    color: #003378; /* ✅ 아이콘 색상 */
+    margin-right: 4px; /* ✅ 글자와 간격 조정 */
+    vertical-align: middle; /* ✅ 글자랑 정렬 */
+  }
+  
+  .application-form {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: "Pretendard", sans-serif;
+    position: relative;
+    top: 150px;
+    left: 50px;
+    font-size: 16px;
+    font-weight: bold;
+    
+  }
+  
+  /* 섹션 컨테이너 */
+  .section {
+    margin-bottom: 30px;
+  }
+  
+  /* 섹션 제목 */
+  .section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* 필수 사항 스타일 */
+  .required {
+    color: red;
+    font-size: 14px;
+  }
+  
+  /* 입력 필드 그룹 */
+  .form-group {
+    display: flex;
+    gap: 48px; /* 컬럼 사이 간격 */
+    margin-bottom: 15px;
+  }
+  
+  /* 입력 필드 */
+  .input-box {
+    flex: 1; /* 같은 크기로 배분 */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* 전체 너비 적용 */
+  .full-width {
+    flex: 2; /* 너비 확장 */
+  }
+  
+  /* 입력창 스타일 */
+  input {
+    
+    height: 48px; /* ✅ Figma와 동일한 height */
+    box-sizing: border-box; /* ✅ 패딩과 보더를 포함한 크기 유지 */
+    padding: 10px; /* ✅ 입력 필드 내부 여백 */
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  /* 전체 컨테이너 */
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* 섹션 타이틀 */
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.required {
+  font-size: 14px;
+  color: red;
+  margin-left: 10px;
+}
+
+/* 파일 업로드 그룹 */
+.file-upload-group {
+  margin-bottom: 24px;
+}
+
+.file-label {
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.file-input-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 4px;
+  background: #f8f8f8;
+}
+
+.file-button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.file-text {
+  color: #666;
+  font-size: 14px;
+}
+
+/* 파일 설명 */
+.file-description {
+  font-size: 14px;
+  color: #777;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* 개인정보 동의 섹션 */
+.privacy-content textarea {
+  width: 100%;
+  max-width: 800px;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #f8f8f8;
+  font-size: 14px;
+  resize: none;
+}
+
+/* 체크박스 */
+.checkbox-group {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input {
+  margin-right: 8px;
+}
+.regist {
+  width: 1200px;
+  height: 60px;
+  background-color: #003378;
+  margin-top: 60px;
+  color: #FFFFFF;
+  display: flex;              /* flex로 정렬 시작 */
+  justify-content: center;   /* 가로 가운데 정렬 */
+  align-items: center;       /* 세로 가운데 정렬 */
+  font-size: 18px;           /* (선택) 텍스트 크기 조절 */
+  font-weight: bold;         /* (선택) 글자 굵게 */
+  cursor: pointer;
+}
