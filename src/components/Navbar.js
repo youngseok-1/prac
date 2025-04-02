@@ -62,7 +62,7 @@ function Navbar() {
   )}
 </li>
           <li className="nav-item">
-            <button className="nav-link">연세소리</button>
+          <Link to="/sound" className="nav-link">연세소리</Link>
           </li>
           <li className="nav-item">
             <button className="nav-link">문의하기</button>

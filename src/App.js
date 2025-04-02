@@ -8,6 +8,7 @@ import AlumniGreeting from "./pages/AlumniGreeting";
 import Alumni2 from "./pages/Alumni2";
 import Alumni3 from "./pages/Alumni3";
 import Alumni4 from "./pages/Alumni4";
+import Sound from "./pages/Sound";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
         <Route path="/alumni2" element={<Alumni2 />} />
         <Route path="/alumni3" element={<Alumni3 />} />
         <Route path="/alumni4" element={<Alumni4 />} />
+        <Route path="/sound" element={<Sound />} />
+
       </Routes>  
     </Router>
   );
