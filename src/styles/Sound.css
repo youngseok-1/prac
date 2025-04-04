@@ -2,7 +2,7 @@
 .alumni-container {
     width: 100%;
     max-width: 1920px;  /* 최대 가로 크기 1920px */
-    height: 1844px; /* ✅ 전체 높이 1556px */
+    height: 2700x; /* ✅ 전체 높이 1556px */
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* ✅ 전체 높이를 화면 높이로 유지 */

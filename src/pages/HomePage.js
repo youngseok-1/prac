@@ -176,7 +176,7 @@ const HomePage = () => {
               <button className="inquiry-btn">문의하러 가기 →</button>
             </div>
           </div>
-          <Footer /> {/* ✅ 여기에 Footer 추가 */}
+          {/* <Footer /> ✅ 여기에 Footer 추가 */}
         </div>
         
         

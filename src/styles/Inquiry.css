@@ -1,0 +1,424 @@
+/* ServingPage.css */
+.alumni-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* 전체 높이를 화면 기준으로 맞춤 */
+}
+  
+  
+  /* 🔹 서빙 헤더 컨테이너 */
+  .serving-header {
+    position: relative; /* ✅ 오버레이 적용을 위해 상대 위치 설정 */
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  
+  .footer {
+    width: 100%;
+    height: 264px; /* ✅ 기존 높이 유지 */
+    background-color: #222;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* ✅ 절대 위치가 아니라 일반 배치 */
+  }
+  
+  /* 🔹 배경 이미지 */
+  .headerimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ✅ 이미지를 꽉 채우면서 비율 유지 */
+    display: block;
+  }
+  
+  /* 🔹 오버레이 (검은색 30%) */
+  .serving-header::after {
+    content: ""; /* ✅ 가상 요소 활성화 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* ✅ 검은색 30% 투명도 */
+    z-index: 1; /* ✅ 텍스트보다 뒤에 배치 */
+  }
+  
+  /* 🔹 헤더 텍스트 */
+  .serving-header-text {
+    position: absolute;
+    color: white; /* ✅ 텍스트 색상 */
+    z-index: 2; /* ✅ 텍스트가 오버레이 위에 표시되도록 */
+    top: 115px;
+    left: 360px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .serving-header-detail {
+    position: absolute;
+    color: white; /* ✅ 텍스트 색상 */
+    z-index: 2; /* ✅ 텍스트가 오버레이 위에 표시되도록 */
+    top: 169px;
+    left: 360px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .breadcrumb {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border: solid 1px;
+    border-color: gray;
+  }
+  
+  .breadcrumb-container {
+    display: flex; /* ✅ 가로 정렬 */
+    align-items: center; /* ✅ 세로 중앙 정렬 */
+    position: relative;
+    gap: 20px; /* ✅ 아이템 간격 20px */
+    left: 360px;
+    width: 260px;
+    height: 60px;
+    
+    border: solid 1px;
+    border-color: gray; /* ✅ 테두리 색상 */
+  }
+  /* 🔹 홈 버튼 */
+  .breadcrumb-home {
+   width: 60px;
+   height: 60px;
+   background-color: #003378;
+   left: 360px;
+   align-items: center;
+   justify-content: center;
+   display: flex; /* ✅ 중앙 정렬을 위해 flex 사용 */
+  }
+  
+  .home-icon {
+    width: 18.75px;
+    height: 16.25px;
+    color: #FFFFFF;
+  }
+  
+  /* 🔹 현재 페이지 */
+  .breadcrumb-current {
+    color: #666666;
+    font-size: 16px;
+   
+  }
+  
+  
+ 
+
+
+  .helpp {
+    position: absolute;
+    top: 480px;
+    left: 360px;
+    font-size: 32px;
+  }
+
+
+  .agree-container {
+    position: absolute;
+    width: 1200px;
+    height: 506px;
+    left: 360px;
+    top: 644px;
+  }
+
+  .agree-text-detail {
+    border: solid 1px;
+    border-color: #DDDDDD;
+    padding-left: 16px;
+    padding-top: 18.5px;
+    overflow-y: scroll;
+    width: 1168px;
+    height: 400px;
+  }
+
+  .agree-check-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding: 0 8px;
+  }
+  
+  .check-label {
+    font-size: 15px;
+    color: #666666;
+  }
+  
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: #666666;
+  }
+  
+  .checkbox-wrapper input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .gray-text {
+    font-size: 18px;
+    color: #666666; /* 또는 #999999 도 좋아 */
+    line-height: 1.6;
+  }
+
+  .gray-line {
+    border: none;
+    border-top: 1px solid #DDDDDD;
+    margin-bottom: 20px; 
+  }
+
+  .agree-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px; /* 양 옆 여백 조절 */
+  }
+  
+  .required-star {
+    color: #E81C1C;
+  }
+  
+  .agree-text {
+    font-size: 18px;
+  }
+
+  .require-text {
+    font-size: 14px;
+    color: #E81C1C;
+    ;
+  }
+
+  .agree-text-detail strong {
+    font-size: 18px;
+  }
+
+  .inquiry-container {
+  
+    width: 1200px;
+    height: 876px;
+    left: 360px;
+    top: 1230px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  .agree-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .required-star {
+    color: red;
+  }
+  
+
+
+  .inquiry-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+  
+  .inquiry-label {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px; /* ✅ 제목과 인풋 사이 간격 */
+    color: #131313;
+  }
+  
+  .inquiry-input {
+    width: 100%;
+    height: 48px;
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .inquiry-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+
+  .inquiry-field {
+    padding-left: 16px
+  }
+
+  .input-writer {
+    width: 560px;
+    height: 48px;
+    padding: 0 12px;
+    font-size: 16px;
+  }
+  
+  .input-phone-group {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .input-phone-select,
+  .input-phone {
+    width: 181.33px;
+    height: 48px;
+    padding: 0 12px;
+    font-size: 16px;
+    border-color: #DDDDDD;
+  }
+
+  .input-phone:focus {
+    background-color: #ffffff;
+  }
+  
+  .input-email-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .input-email {
+    width: 187.5px;
+    height: 48px;
+    padding: 0 12px;
+    font-size: 16px;
+  }
+  
+  .input-email-select {
+    width: 146px;
+    height: 48px;
+    padding: 0 12px;
+    font-size: 16px;
+    border-color: #DDDDDD;
+    color: #666666;
+    font-size: 16px
+  }
+  
+  .at-symbol {
+    font-size: 18px;
+  }
+  
+  .inquiry-textarea-large {
+    width: 1168px;
+    height: 260px;
+    font-size: 16px;
+    padding: 12px;
+    resize: none;
+    border: 1px solid #ccc;
+    background-color: #DDDDDD;
+    outline: none;
+    transition: background-color 0.3s;
+    font-family: inherit;
+  }
+  
+  /* 포커스 시 흰색으로 전환 */
+  .inquiry-textarea-large:focus {
+    background-color: #ffffff;
+  }
+
+  
+/* 공통 input 스타일 */
+.inquiry-input,
+.input-email,
+.input-tel,
+.input-email-select,
+.input-tel-select {
+  background-color: #DDDDDD;
+  border: 1px solid #ccc;
+  padding: 0 12px;
+  height: 48px;
+  font-size: 16px;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+/* 포커스 시 하얀색 배경 */
+.inquiry-input:focus,
+.input-email:focus,
+.input-tel:focus,
+.input-email-select:focus,
+.input-tel-select:focus {
+  background-color: #ffffff;
+}
+
+
+.inquiry-button-wrapper {
+  position: absolute;
+  left: 360px;
+  top: 2100px;
+}
+
+.inquiry-submit-button {
+  width: 1200px;
+  height: 60px;
+  background-color: #003378;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.inquiry-submit-button:hover {
+  background-color: #00285e; /* 호버 시 약간 더 진한 색 */
+}
+
+
+
+.main-content {
+  flex: 1;
+  
+}
+
+.inquiry-button-wrapper {
+  width: 1200px;
+  margin: 60px auto 0; 
+}
+
+.inquiry-submit-button {
+  width: 100%;
+  height: 60px;
+  background-color: #003378;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.footer {
+  width: 100%;
+  height: 264px;
+  background-color: #222;
+  color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,14 +1,27 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom"; 
 import "../styles/Navbar.css";
 
 function Navbar() {
 
   const location = useLocation();
-  const [openDropdown, setOpenDropdown] = useState(null); // 현재 열린 드롭다운 상태
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const closeTimeout = useRef(null); // 닫기 딜레이용 ref
 
   const toggleDropdown = (menu) => {
-    setOpenDropdown(openDropdown === menu ? null : menu); // 같은 메뉴 클릭 시 닫기
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    setOpenDropdown(openDropdown === menu ? null : menu);
+  };
+
+  const handleMouseEnter = (menu) => {
+    if (closeTimeout.current) clearTimeout(closeTimeout.current);
+    setOpenDropdown(menu);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeout.current = setTimeout(() => {
+      setOpenDropdown(null);
+    }, 300); // 300ms 후에 닫기
   };
 
   return (
@@ -32,26 +45,24 @@ function Navbar() {
             <Link to="/introduce" className="nav-link">과정 소개</Link>
           </li>
           <li
-            className="nav-item dropdown"
-            onMouseEnter={() => toggleDropdown("admission")}
-            onMouseLeave={() => toggleDropdown(null)}
-          >
-           <li className={`nav-item ${location.pathname === "/entrance" ? "active" : ""}`}>
-            <Link to="/entrance" className="nav-link">모시는 글</Link>
-          </li>
-            {openDropdown === "admission" && (
-              <ul className="dropdown-menu admission">
-                <li><Link to="/entrance">입학 안내</Link></li>
-                <li><Link to="/online">온라인 지원</Link></li>
-              </ul>
-            )}
-          </li>
-          <li
-  className={`nav-item dropdown ${location.pathname === "/alumni1" ? "active" : ""}`}
-  onMouseEnter={() => toggleDropdown("alumni")}
-  onMouseLeave={() => toggleDropdown(null)}
+  className="nav-item dropdown"
+  onMouseEnter={() => handleMouseEnter("admission")}
+  onMouseLeave={handleMouseLeave}
 >
-  <Link to="/alumni1" className="nav-link">총동문회</Link> {/* ✅ 클릭해도 동문회장 인사말로 이동 */}
+  <Link to="/entrance" className="nav-link">입학안내</Link>
+  {openDropdown === "admission" && (
+    <ul className="dropdown-menu admission">
+      <li><Link to="/entrance">입학 안내</Link></li>
+      <li><Link to="/online">온라인 지원</Link></li>
+    </ul>
+  )}
+</li>
+<li
+  className="nav-item dropdown"
+  onMouseEnter={() => handleMouseEnter("alumni")}
+  onMouseLeave={handleMouseLeave}
+>
+  <Link to="/alumni1" className="nav-link">총동문회</Link>
   {openDropdown === "alumni" && (
     <ul className="dropdown-menu alumni">
       <li><Link to="/alumni1">동문회장 인사말</Link></li>
@@ -65,7 +76,7 @@ function Navbar() {
           <Link to="/sound" className="nav-link">연세소리</Link>
           </li>
           <li className="nav-item">
-            <button className="nav-link">문의하기</button>
+          <Link to="/inquiry" className="nav-link">문의하기</Link>
           </li>
         </ul>
 
