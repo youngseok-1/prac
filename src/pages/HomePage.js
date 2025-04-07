@@ -6,7 +6,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/HomePage.css"; 
 
-
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
 
 const HomePage = () => {
@@ -170,16 +172,31 @@ const HomePage = () => {
             </div>
             <div className="inquiry-content">
               <img src={`${process.env.PUBLIC_URL}/assets/inquiry.jpg`} alt="inquiry1" className="inquiry-img" />
-            <div className="inquiry-container">
+            <div className="inquiry-container5">
               <div className="inquiry-title">문의하기</div>
               <div className="inquriy-detail">도움이 필요하신가요? 문의사항을 남겨주시면 담당자가 안내드립니다.</div>
               <button className="inquiry-btn">문의하러 가기 →</button>
             </div>
           </div>
-          {/* <Footer /> ✅ 여기에 Footer 추가 */}
+          
         </div>
         
-        
+        <Footer /> 
+
+        <div className="top-btn-container" onClick={scrollToTop}>
+  <svg className="top-btn-circle" viewBox="0 0 200 200">
+    <defs>
+      <path id="circlePath" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"/>
+    </defs>
+    <text>
+      <textPath href="#circlePath" startOffset="0%">
+        YONSEI UNIVERSITY · 연세대학교 의료산업 최고위자 과정 ·
+      </textPath>
+    </text>
+  </svg>
+  <div className="top-btn-arrow">↑</div>
+
+      </div>
       </div>
         
     );

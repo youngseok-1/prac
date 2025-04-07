@@ -10,6 +10,8 @@ import Alumni3 from "./pages/Alumni3";
 import Alumni4 from "./pages/Alumni4";
 import Sound from "./pages/Sound";
 import Inquiry from "./pages/Inquiry";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup"; 
 
 import "./App.css";
 
@@ -17,8 +19,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} /> {/* ✅ 홈 페이지 */}
-        <Route path="/serving" element={<ServingPage />} /> {/* ✅ 모시는 글 페이지 */}
+        <Route path="/" element={<HomePage />} /> 
+        <Route path="/serving" element={<ServingPage />} /> 
         <Route path="/introduce" element={<Introduce />} />
         <Route path="/entrance" element={<Entrance />} />
         <Route path="/online" element={<Online />} />   
@@ -28,6 +30,8 @@ function App() {
         <Route path="/alumni4" element={<Alumni4 />} />
         <Route path="/sound" element={<Sound />} />
         <Route path="/inquiry" element={<Inquiry />} />
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/signup" element={<Signup />} />
       </Routes>  
     </Router>
   );

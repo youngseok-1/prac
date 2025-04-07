@@ -443,7 +443,7 @@ body {
 
 
 /* 🔹 문의 컨테이너 */
-.inquiry-container {
+.inquiry-container5 {
   position: absolute; /* ✅ 이미지 위에 배치 */
   color: white; /* ✅ 텍스트 색상 흰색 */
   z-index: 2; /* ✅ 오버레이 위로 올리기 */
@@ -487,3 +487,47 @@ body {
     position: relative;
   }
   
+
+  .top-btn-container {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+  }
+  
+  .top-btn-circle {
+    width: 100px;
+    height: 100px;
+    transform-origin: center center;
+    transition: transform 0.8s ease-in-out;
+  }
+  
+  .top-btn-container:hover .top-btn-circle {
+    animation: rotate-circle 2s linear infinite;
+  }
+  
+  .top-btn-circle text {
+    font-size: 9px;
+    fill: #003378;
+    font-weight: bold;
+    letter-spacing: 10px;
+    font-family: PRETENDERS;
+  }
+  
+  .top-btn-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #003378;
+    font-weight: bold;
+    pointer-events: none;
+  }
+  
+  @keyframes rotate-circle {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

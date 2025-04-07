@@ -1,8 +1,7 @@
 /* ServingPage.css */
-.alumni-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* 전체 높이를 화면 기준으로 맞춤 */
+.alumni-container10 {
+  width: 1920px;
+  height: 2700px;
 }
   
   
@@ -26,7 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; /* ✅ 절대 위치가 아니라 일반 배치 */
+   
   }
   
   /* 🔹 배경 이미지 */
@@ -211,7 +210,7 @@
   }
 
   .inquiry-container {
-  
+    position: absolute;
     width: 1200px;
     height: 876px;
     left: 360px;
@@ -421,4 +420,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }

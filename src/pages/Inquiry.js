@@ -6,9 +6,9 @@ import "../styles/Inquiry.css";
 
 const AlumniGreeting = () => {
   return (
-    <div className="alumni-container">
+    <div className="alumni-container10">
       <Navbar />
-      <div className="main-content">
+      
       {/* 🔹 헤더 영역 */}
       <div className="serving-header">
         <img src={`${process.env.PUBLIC_URL}/assets/inquiry.jpg`} alt="headerimg" className="headerimage" />
@@ -161,9 +161,11 @@ const AlumniGreeting = () => {
       
   
 
-</div>  
-<Footer />
+
+{/* <Footer /> */}
     </div>
+
+    
   );
 };
 
