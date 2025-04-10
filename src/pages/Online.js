@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar"; // 기존 Navbar 사용
 import Footer from "../components/Footer"; // 기존 Footer 사용
 import "../styles/Online.css"; // 스타일 추가
 import { FaHome, FaAngleRight } from "react-icons/fa"; // 🔹 아이콘 추가
 import { FaUniversity } from "react-icons/fa"; // ✅ 아이콘 import
 
+
+
 const ServingPage = () => {
+
+
+  const [admissionFileName, setAdmissionFileName] = useState("선택된 파일이 없습니다.");
+  const [proofFileName, setProofFileName] = useState("선택된 파일이 없습니다.");
+
+  const handleFileChange = (e, type) => {
+    const fileName = e.target.files[0]?.name || "선택된 파일이 없습니다.";
+    if (type === "admission") {
+      setAdmissionFileName(fileName);
+    } else {
+      setProofFileName(fileName);
+    }
+  };
+
+  const triggerFileInput = (type) => {
+    document.getElementById(type).click();
+  };
   return (
     <div className="serving-container">
       <Navbar />
@@ -110,29 +129,34 @@ const ServingPage = () => {
   <div className="section-title">제출 서류 <span className="required">*필수 사항입니다</span></div>
 
   {/* 입학지원서 */}
-  <div className="file-upload-group">
-    <label className="file-label">입학지원서 <span className="required">*</span></label>
-    <div className="file-input-box">
-      <button className="file-button">파일 선택</button>
-      <span className="file-text">선택된 파일이 없습니다.</span>
-    </div>
-    <p className="file-description">
-      ※ 입학지원서는 입학안내 페이지에서 다운로드 받으실 수 있습니다. <br />
-      ※ 반드시 서명 후 PDF로 업로드 해주세요. <br />
-      ※ 파일 크기는 50MB보다 작아야 합니다.
-    </p>
-  </div>
+  <div className="section">
+            <div className="section-title">제출 서류 <span className="required">*필수 사항입니다</span></div>
 
-  {/* 재직증명서 */}
-  <div className="file-upload-group">
-    <label className="file-label">재직증명서 또는 경력증명서 또는 사업자등록증 <span className="required">*</span></label>
-    <div className="file-input-box">
-      <button className="file-button">파일 선택</button>
-      <span className="file-text">선택된 파일이 없습니다.</span>
-    </div>
-    <p className="file-description">※ 파일 크기는 50MB보다 작아야 합니다.</p>
-  </div>
-</div>
+            <div className="file-upload-group">
+              <label className="file-label">입학지원서 <span className="required">*</span></label>
+              <div className="file-input-box">
+                <button type="button" className="file-button" onClick={() => triggerFileInput("admissionFile")}>파일 선택</button>
+                <span className="file-text">{admissionFileName}</span>
+                <input type="file" id="admissionFile" style={{ display: "none" }} onChange={(e) => handleFileChange(e, "admission")} />
+              </div>
+              <p className="file-description">
+                ※ 입학지원서는 입학안내 페이지에서 다운로드 받으실 수 있습니다. <br />
+                ※ 반드시 서명 후 PDF로 업로드 해주세요. <br />
+                ※ 파일 크기는 50MB보다 작아야 합니다.
+              </p>
+            </div>
+
+            <div className="file-upload-group">
+              <label className="file-label">재직증명서 또는 경력증명서 또는 사업자등록증 <span className="required">*</span></label>
+              <div className="file-input-box">
+                <button type="button" className="file-button" onClick={() => triggerFileInput("proofFile")}>파일 선택</button>
+                <span className="file-text">{proofFileName}</span>
+                <input type="file" id="proofFile" style={{ display: "none" }} onChange={(e) => handleFileChange(e, "proof")} />
+              </div>
+              <p className="file-description">※ 파일 크기는 50MB보다 작아야 합니다.</p>
+            </div>
+          </div>
+            </div>
 
 {/* 🔹 개인정보 동의 */}
 <div className="section">

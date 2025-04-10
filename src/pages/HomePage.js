@@ -4,7 +4,8 @@ import Footer from "../components/Footer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "../styles/HomePage.css"; 
+import "../styles/HomePage.css";
+import { Link } from "react-router-dom"; 
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -76,7 +77,9 @@ const HomePage = () => {
                 100여 명의 핵심 인맥을 통해 참가자의 업력과 경쟁력을 한층 더 발전시킬 기회를 제공합니다.
               </div>
 
-              <div className="info-btn">자세히 보기 +</div>
+              <Link to="/introduce" className="info-btn">
+                자세히 보기 +
+              </Link>
             </div>
 
             <div className="btn-content"
@@ -101,40 +104,51 @@ const HomePage = () => {
               </div>
 
               <div className="btn-container">
-              <button className="btn">
-                <span className="btn-text">최고위자과정</span>
-                <span className="btn-text2">입학 안내</span>
-              <div className="btn-circle">
-                <i className="arrow">→</i>
-              </div>
-              </button>
-              <button className="btn">
-                <span className="btn-text">최고위자과정 입학</span>
-                <span className="btn-text2">온라인 지원</span>
-              <div className="btn-circle">
-                <i className="arrow">→</i>
-              </div>
-              </button>
-              <button className="btn">
-                <span className="btn-text">총동문회</span>
-                <span className="btn-text2">동문 회칙</span>
-              <div className="btn-circle">
-                <i className="arrow">→</i>
-              </div>
-              </button>
-              <button className="btn">
-                <span className="btn-text">최고위자과정</span>
-                <span className="btn-text2">동문 소개</span>
-              <div className="btn-circle">
-                <i className="arrow">→</i>
-              </div>
-              </button>
-              </div>
+              <Link to="/entrance" className="btn-link">
+                <button className="btn">
+                  <span className="btn-text">최고위자과정</span>
+                  <span className="btn-text2">입학 안내</span>
+                  <div className="btn-circle">
+                    <i className="arrow">→</i>
+                  </div>
+                </button>
+              </Link>
+
+              <Link to="/online" className="btn-link">
+                <button className="btn">
+                  <span className="btn-text">최고위자과정 입학</span>
+                  <span className="btn-text2">온라인 지원</span>
+                  <div className="btn-circle">
+                    <i className="arrow">→</i>
+                  </div>
+                </button>
+              </Link>
+
+              <Link to="/alumni3" className="btn-link">
+                <button className="btn">
+                  <span className="btn-text">총동문회</span>
+                  <span className="btn-text2">동문 회칙</span>
+                  <div className="btn-circle">
+                    <i className="arrow">→</i>
+                  </div>
+                </button>
+              </Link>
+
+              <Link to="/alumni4" className="btn-link">
+                <button className="btn">
+                  <span className="btn-text">최고위자과정</span>
+                  <span className="btn-text2">동문 소개</span>
+                  <div className="btn-circle">
+                    <i className="arrow">→</i>
+                  </div>
+                </button>
+              </Link>
+            </div>
             </div>
             <div className="post-content">
               <span className = "post-text">연세대학교 의료산업 최고위자 과정<br />
               소식을 전해드립니다.</span>
-              <span className= "view-more">View More →</span>
+              <Link to="/sound" className= "view-more">View More →</Link>
 
               <div className="post-container">
               <div className="post-box">
@@ -175,7 +189,7 @@ const HomePage = () => {
             <div className="inquiry-container5">
               <div className="inquiry-title">문의하기</div>
               <div className="inquriy-detail">도움이 필요하신가요? 문의사항을 남겨주시면 담당자가 안내드립니다.</div>
-              <button className="inquiry-btn">문의하러 가기 →</button>
+              <Link to="/inquiry"  className="inquiry-btn">문의하러 가기 →</Link>
             </div>
           </div>
           

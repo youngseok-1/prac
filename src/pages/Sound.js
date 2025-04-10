@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { FaHome} from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import "../styles/Sound.css";
+import axios from "axios";
+
+const PAGE_SIZE = 6;
 
 const AlumniGreeting = () => {
+  const [posts, setPosts] = useState([]);
+  const [page, setPage] = useState(0); // 0부터 시작
+  const [totalPages, setTotalPages] = useState(0);
+
+  useEffect(() => {
+    axios.get(`/api/posts?page=${page}&size=6`)
+      .then((res) => {
+        if (res.data && Array.isArray(res.data.content)) {
+          setPosts(res.data.content);
+          setTotalPages(res.data.totalPages);
+        } else {
+          console.error("백엔드 응답 형식이 예상과 다릅니다.", res.data);
+          setPosts([]); // 기본값으로 처리
+        }
+      })
+      .catch((err) => console.error(err));
+  }, [page]);
   return (
     <div className="alumni-container">
       <Navbar />
@@ -26,95 +46,46 @@ const AlumniGreeting = () => {
 
       {/* 🔹 본문 */}
       <div className="alumni-table-container">
-      <h2 className="table-title">동문회 소식</h2>
+        <h2 className="table-title">동문회 소식</h2>
 
-      <div className="search-bar">
-        <input type="text" placeholder="검색어를 입력해주세요." />
-        <span className="search-icon">🔍</span>
+        <div className="search-bar">
+          <input type="text" placeholder="검색어를 입력해주세요." />
+          <span className="search-icon">🔍</span>
+        </div>
+
+        <div className="post-container2">
+          {posts.map((post, index) => (
+            <div className="post-box" key={post.id}>
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/post${index + page * PAGE_SIZE + 1}.jpg`}
+                alt={`post${index + 1}`}
+                className="post-img"
+              />
+              <div className="hover-arrow">→</div>
+              <div className="post-underline"></div>
+              <div className="post-title">{post.title}</div>
+              <div className="post-detail">{post.content}</div>
+              <div className="post-date">⏰2024-12-30</div> {/* 실제 날짜 필드 추가하면 수정 */}
+            </div>
+          ))}
+        </div>
+
+        {/* 🔹 페이지네이션 */}
+        <div className="pagination">
+          <button onClick={() => setPage((prev) => Math.max(prev - 1, 0))} disabled={page === 0}>
+            {"<"}
+          </button>
+          {[...Array(totalPages)].map((_, i) => (
+            <button key={i} className={page === i ? "active" : ""} onClick={() => setPage(i)}>
+              {i + 1}
+            </button>
+          ))}
+          <button onClick={() => setPage((prev) => Math.min(prev + 1, totalPages - 1))} disabled={page === totalPages - 1}>
+            {">"}
+          </button>
+        </div>
       </div>
 
-      <div className="post-container2">
-              <div className="post-box">
-                <img src={`${process.env.PUBLIC_URL}/assets/post1.jpg`} alt="post1" className="post-img" />
-                <div className="hover-arrow">→</div>
-                <div className="post-underline"></div>
-                <div className="post-title">2025년 교직원 새해인사</div>
-                <div className="post-detail">
-                  2025년 새해를 맞이하여 하나님의 크신 은혜가 선생님과<br />
-                  가정에 함께 하시기를 기원합니다.
-                </div>
-                <div className="post-date">⏰2024-12-30</div>
-              </div>
-              <div className="post-box">
-                <img src={`${process.env.PUBLIC_URL}/assets/post2.jpg`} alt="post2" className="post-img" />
-                <div className="hover-arrow">→</div>
-                <div className="post-underline"></div>
-                <div className="post-title">제 2기 과정 수료식</div>
-                <div className="post-detail">
-                  제 2기 연세대학교 의료산업 최고위자 과정 수료식
-                </div>
-                <div className="post-date">⏰2024-11-30</div>
-              </div>
-              <div className="post-box">
-                <img src={`${process.env.PUBLIC_URL}/assets/post3.jpg`} alt="post3" className="post-img" />
-                <div className="hover-arrow">→</div>
-                <div className="post-underline"></div>
-                <div className="post-title">제 2기 과정 입학식</div>
-                <div className="post-detail">
-                제 2기 연세대학교 의료산업 최고위자 과정 입학
-                </div>
-                <div className="post-date">⏰2024-07-01</div>
-              </div>
-
-              <div className="post-box">
-                <img src={`${process.env.PUBLIC_URL}/assets/post4.jpg`} alt="post4" className="post-img" />
-                <div className="hover-arrow">→</div>
-                <div className="post-underline"></div>
-                <div className="post-title">제 1기 과정 수료식</div>
-                <div className="post-detail">
-                제 1기 연세대학교 의료산업 최고위자 과정 수료식
-                </div>
-                <div className="post-date">⏰2024-06-20</div>
-              </div>
-
-              <div className="post-box">
-                <img src={`${process.env.PUBLIC_URL}/assets/post5.jpg`} alt="post5" className="post-img" />
-                <div className="hover-arrow">→</div>
-                <div className="post-underline"></div>
-                <div className="post-title">제 1기 과정 입학식</div>
-                <div className="post-detail">
-                제 1기 연세대학교 의료산업 최고위자 과정 입학식
-                </div>
-                <div className="post-date">⏰2024-03-02</div>
-              </div>
-
-              <div className="post-box">
-                <img src={`${process.env.PUBLIC_URL}/assets/post6.jpg`} alt="post6" className="post-img" />
-                <div className="hover-arrow">→</div>
-                <div className="post-underline"></div>
-                <div className="post-title">2024년 송년의 밤</div>
-                <div className="post-detail">
-                안녕하세요. 2024년 송년의 밤에 여러분을 초대합니다.<br />
-                풍성하고 즐거운 행사가 되도록 노력하겠습니다. 감사합...
-                </div>
-                <div className="post-date">⏰2023-12-31</div>
-              </div>
-              </div>
-      
-
-      <div className="pagination">
-        <button>{'≪'}</button>
-        <button>{'<'}</button>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-          <button className={num === 1 ? "active" : ""} key={num}>{num}</button>
-        ))}
-        <button>{'>'}</button>
-        <button>{'≫'}</button>
-      </div>
-    </div>
-  
-
-        
       <Footer />
     </div>
   );

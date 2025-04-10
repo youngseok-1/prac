@@ -178,6 +178,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 .info-btn:hover {
@@ -332,6 +333,7 @@ body {
 
   border-bottom: 1px solid #003378; /* 색상은 텍스트 색상과 동일하게 설정 */
   padding-bottom: 5px;
+  text-decoration: none;
 }
 
 .post-container {
@@ -474,6 +476,7 @@ body {
   border: none;
   border-radius: 100px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 
