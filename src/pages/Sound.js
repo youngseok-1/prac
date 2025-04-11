@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { FaHome } from "react-icons/fa";
 import "../styles/Sound.css";
 import axios from "axios";
+import { Link } from "react-router-dom"; 
 
 const PAGE_SIZE = 6;
 
@@ -54,8 +55,9 @@ const AlumniGreeting = () => {
         </div>
 
         <div className="post-container2">
-          {posts.map((post, index) => (
-            <div className="post-box" key={post.id}>
+        {posts.map((post, index) => (
+          <Link to={`/posts/${post.id}`} key={post.id} className="post-box-link">
+            <div className="post-box">
               <img
                 src={`${process.env.PUBLIC_URL}/assets/post${index + page * PAGE_SIZE + 1}.jpg`}
                 alt={`post${index + 1}`}
@@ -65,8 +67,9 @@ const AlumniGreeting = () => {
               <div className="post-underline"></div>
               <div className="post-title">{post.title}</div>
               <div className="post-detail">{post.content}</div>
-              <div className="post-date">⏰2024-12-30</div> {/* 실제 날짜 필드 추가하면 수정 */}
+              <div className="post-date">⏰2024-12-30</div>
             </div>
+          </Link>
           ))}
         </div>
 

@@ -12,6 +12,7 @@ import Sound from "./pages/Sound";
 import Inquiry from "./pages/Inquiry";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup"; 
+import PostDetail from './pages/PostDetail';
 
 import "./App.css";
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/inquiry" element={<Inquiry />} />
         <Route path="/login" element={<Login />} /> 
         <Route path="/signup" element={<Signup />} />
+        <Route path="/posts/:id" element={<PostDetail />} />
       </Routes>  
     </Router>
   );

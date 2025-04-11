@@ -1,0 +1,54 @@
+/* 전체 컨테이너 */
+.post-detail-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fefefe;
+  }
+  
+  /* 게시글 제목 */
+  .post-detail-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #0E2913;
+  }
+  
+  /* 게시글 이미지 */
+  .post-detail-img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px auto;
+  }
+  
+  /* 게시글 본문 */
+  .post-detail-container p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    white-space: pre-line;
+    padding: 0 20px;
+  }
+  
+  /* 목록 버튼 */
+  .post-detail-container button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    background-color: #0E2913;
+    color: #ffffff;
+    font-size: 1rem;
+    font-family: 'BMJUA', sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .post-detail-container button:hover {
+    background-color: #A3DA87;
+    color: #0E2913;
+  }
+  

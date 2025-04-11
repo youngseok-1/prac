@@ -1,11 +1,12 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer"; 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/HomePage.css";
-import { Link } from "react-router-dom"; 
+import axios from "axios"; // axios import 추가
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -15,6 +16,14 @@ const scrollToTop = () => {
 const HomePage = () => {
 
     const sliderRef = useRef(null); // ✅ 슬라이더 참조 생성
+    const [latestPosts, setLatestPosts] = useState([]);
+
+    useEffect(() => {
+      // 최신 게시글 3개 가져오기
+      axios.get("/api/posts/latest")
+        .then(res => setLatestPosts(res.data))
+        .catch(err => console.error("최신 게시글 불러오기 실패", err));
+    }, []);
 
 
     const settings = {
@@ -151,47 +160,33 @@ const HomePage = () => {
               <Link to="/sound" className= "view-more">View More →</Link>
 
               <div className="post-container">
-              <div className="post-box">
-                <img src={`${process.env.PUBLIC_URL}/assets/post1.jpg`} alt="post1" className="post-img" />
+            {latestPosts.map((post, index) => (
+              <Link to={`/posts/${post.id}`} className="post-box" key={post.id}>
+                <img src={`${process.env.PUBLIC_URL}/assets/post${post.id}.jpg`} alt={`post${post.id}`} className="post-img" />
                 <div className="hover-arrow">→</div>
                 <div className="post-underline"></div>
-                <div className="post-title">2025년 교직원 새해인사</div>
-                <div className="post-detail">
-                  2025년 새해를 맞이하여 하나님의 크신 은혜가 선생님과<br />
-                  가정에 함께 하시기를 기원합니다.
-                </div>
-                <div className="post-date">⏰2024-12-30</div>
-              </div>
-              <div className="post-box">
-                <img src={`${process.env.PUBLIC_URL}/assets/post2.jpg`} alt="post2" className="post-img" />
-                <div className="hover-arrow">→</div>
-                <div className="post-underline"></div>
-                <div className="post-title">제 2기 과정 수료식</div>
-                <div className="post-detail">
-                  제 2기 연세대학교 의료산업 최고위자 과정 수료식
-                </div>
-                <div className="post-date">⏰2024-11-30</div>
-              </div>
-              <div className="post-box">
-                <img src={`${process.env.PUBLIC_URL}/assets/post3.jpg`} alt="post3" className="post-img" />
-                <div className="hover-arrow">→</div>
-                <div className="post-underline"></div>
-                <div className="post-title">제 2기 과정 입학식</div>
-                <div className="post-detail">
-                제 2기 연세대학교 의료산업 최고위자 과정 입학
-                </div>
-                <div className="post-date">⏰2024-07-01</div>
-              </div>
-              </div>
+                <div className="post-title">{post.title}</div>
+                <div className="post-detail">{post.content.length > 40 ? post.content.slice(0, 40) + "..." : post.content}</div>
+                <div className="post-date">⏰{post.date}</div> {/* post.date 있으면 수정 */}
+              </Link>
+            ))}
             </div>
-            <div className="inquiry-content">
-              <img src={`${process.env.PUBLIC_URL}/assets/inquiry.jpg`} alt="inquiry1" className="inquiry-img" />
-            <div className="inquiry-container5">
-              <div className="inquiry-title">문의하기</div>
+
+
+            
+
+          
+
+          
+          </div>
+          <div className="inquiry-content">
+            <img src={`${process.env.PUBLIC_URL}/assets/inquiry.jpg`} alt="inquiry1" className="inquiry-img" />
+            <div className="inquiry-container"></div>
+            <div className="inquiry-title">문의하기</div>
               <div className="inquriy-detail">도움이 필요하신가요? 문의사항을 남겨주시면 담당자가 안내드립니다.</div>
               <Link to="/inquiry"  className="inquiry-btn">문의하러 가기 →</Link>
-            </div>
-          </div>
+          </div> 
+          
           
         </div>
         
